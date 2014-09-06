@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  FirstName: MyString
+  MiddleName: MyString
+  LastName: MyString
+  PrecinctUID: 
+  PrecinctName: MyString
+  HouseNumber: 1
+  StreetName: MyString
+  StreetSuffix: MyString
+  StreetDirection: MyString
+
+two:
+  FirstName: MyString
+  MiddleName: MyString
+  LastName: MyString
+  PrecinctUID: 
+  PrecinctName: MyString
+  HouseNumber: 1
+  StreetName: MyString
+  StreetSuffix: MyString
+  StreetDirection: MyString

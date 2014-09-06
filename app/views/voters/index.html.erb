@@ -1,0 +1,70 @@
+<%= flash[:notice] %>
+<table>
+  <thead>
+    <tr>
+      <th>VoterID</th>
+      <th>FirstName</th>
+      <th>LastName</th>
+      <th>MiddleName</th>
+      <th>Gender</th>
+      <th>DOB</th>
+      <th>SSN</th>
+      <th>PrecinctName</th>
+      <th>PrecinctUID</th>
+      <th>HouseNumber</th>
+      <th>StreetName</th>
+      <th>StreetSuffix</th>
+      <th>StreetDirection</th>
+      <th>City</th>
+      <th>LocalityName</th>
+      <th>LocalityCode</th>
+      <th>State</th>
+      <th>Country</th>
+      <th>ZIP</th>
+      <th>PhoneNumber</th>
+      <th>Email</th>
+      <th>Over18</th>
+      <th>Primary Language</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @voters.each do |voter| %>
+      <tr>
+        <td><%= voter.IdentificationNumber %></td>
+        <td><%= voter.FirstName %></td>
+        <td><%= voter.LastName %></td>
+        <td><%= voter.MiddleName %></td>
+        <td><%= voter.Gender %></td>
+        <td><%= voter.DOB %></td>
+        <td><%= voter.IdentificationNumber %></td>
+        <td><%= voter.PrecinctName %></td>
+        <td><%= voter.PrecinctUID %></td>
+        <td><%= voter.HouseNumber %></td>
+        <td><%= voter.StreetName %></td>
+        <td><%= voter.StreetSuffix %></td>
+        <td><%= voter.StreetDirection %></td>
+        <td><%= voter.City %></td>
+        <td><%= voter.LocalityName %></td>
+        <td><%= voter.LocalityCode %></td>
+        <td><%= voter.State %></td>
+        <td><%= voter.Country %></td>
+        <td><%= voter.ZIP %></td>
+        <td><%= voter.Phone %></td>
+        <td><%= voter.Email %></td>
+        <td><%= voter.Over18 %></td>
+        <td><%= voter.Language %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div>
+<h3>Generate a Voter Roll</h3>
+  <%= form_tag generate_voters_path, multipart: true do %>
+    <%= submit_tag "Generate Voters" %>
+<% end %>
+</div>
+<div>
+  <br><%= link_to 'Add a Name CSV File', names_path %><br />
+  <br><%= link_to 'Add a Precinct CSV File', precincts_path %><br />
+  <br><%= link_to 'Add a Segment CSV File', segments_path %><br />
+</div>

@@ -1,0 +1,32 @@
+<%= flash[:notice] %>
+<table>
+  <thead>
+    <tr>
+      <th>FirstName</th>
+      <th>LastName</th>
+      <th>MiddleName</th>
+      <th>Gender</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @names.each do |name| %>
+      <tr>
+        <td><%= name.FirstName %></td>
+        <td><%= name.LastName %></td>
+        <td><%= name.MiddleName %></td>
+        <td><%= name.Gender %></td>
+    <% end %>
+  </tbody>
+</table>
+<h3>Import a Name CSV File</h3>
+  <%= form_tag import_names_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Import CSV" %>
+  <% end %>
+</div>
+
+<div>
+  <br><%= link_to 'Add a Precinct CSV File', precincts_path %><br />
+  <br><%= link_to 'Add a Segment CSV File', segments_path %><br />
+  <br><%= link_to 'See Voter Roll', voters_path %><br />
+</div>
